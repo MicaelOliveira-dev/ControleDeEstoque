@@ -1,10 +1,12 @@
-﻿using ControlaAiBack.Application.DTOs.ControlaAiBack.Application.Dtos;
-using ControlaAiBack.Domain.Entities;
+﻿using ControlaAiBack.Application.DTOs;
+using ControlaAiBack.Application.DTOs.ControlaAiBack.Application.Dtos;
 
 namespace ControlaAiBack.Application.Interfaces
 {
     public interface IUserService
     {
-        Task<User> CreateAdminUserAsync(UserCreateDto userCreateDto);
+        Task<UserDto> CreateAdminUserAsync(UserCreateDto userCreateDto);
+        Task<bool> SoftDeleteUserAsync(Guid id);
+        Task<bool> RestoreUserAsync(Guid id);
     }
 }

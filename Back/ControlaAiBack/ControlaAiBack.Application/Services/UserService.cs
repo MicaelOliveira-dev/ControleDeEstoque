@@ -1,4 +1,5 @@
 ﻿using ControlaAiBack.Application.Autentication;
+using ControlaAiBack.Application.DTOs;
 using ControlaAiBack.Application.DTOs.ControlaAiBack.Application.Dtos;
 using ControlaAiBack.Application.Interfaces;
 using ControlaAiBack.Domain.Entities;
@@ -15,7 +16,7 @@ namespace ControlaAiBack.Application.Services
             _userRepository = userRepository;
         }
 
-        public async Task<User> CreateAdminUserAsync(UserCreateDto userCreateDto)
+        public async Task<UserDto> CreateAdminUserAsync(UserCreateDto userCreateDto)
         {
             var user = new User
             {
@@ -27,7 +28,37 @@ namespace ControlaAiBack.Application.Services
             };
 
             await _userRepository.AddAsync(user);
-            return user;
+
+            return new UserDto
+            {
+                Id = user.Id,
+                NomeEmpresa = user.NomeEmpresa,
+                NomeProprietario = user.NomeProprietario,
+                Email = user.Email,
+                Permissao = user.Permissao
+            };
+        }
+
+        public async Task<bool> SoftDeleteUserAsync(Guid id)
+        {
+            var user = await _userRepository.GetByIdAsync(id);
+            if (user == null || user.IsDeleted) return false;
+
+            user.IsDeleted = true;
+            user.DeletedAt = DateTime.UtcNow; 
+            await _userRepository.UpdateAsync(user);
+            return true;
+        }
+
+        public async Task<bool> RestoreUserAsync(Guid id)
+        {
+            var user = await _userRepository.GetByIdAsync(id);
+            if (user == null || !user.IsDeleted) return false;
+
+            user.IsDeleted = false;
+            user.DeletedAt = null; 
+            await _userRepository.UpdateAsync(user);
+            return true;
         }
     }
 }

@@ -11,6 +11,9 @@ namespace ControlaAiBack.Domain.Entities
         public string SenhaHash { get; set; }
         public UserType Permissao { get; set; }
 
+        public bool IsDeleted { get; set; } = false;
+        public DateTime? DeletedAt { get; set; }
+
         public enum UserType 
         {
             Admin,

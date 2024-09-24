@@ -25,5 +25,25 @@ namespace ControlaAiBack.API.Controllers
             var user = await _userService.CreateAdminUserAsync(userCreateDto);
             return CreatedAtAction(nameof(CreateAdminUser), new { id = user.Id }, user);
         }
+
+        [HttpDelete("delete-user/{id}")]
+        public async Task<IActionResult> SoftDeleteUser(Guid id)
+        {
+            var result = await _userService.SoftDeleteUserAsync(id);
+            if (!result)
+                return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpPut("restore-user/{id}")]
+        public async Task<IActionResult> RestoreUser(Guid id)
+        {
+            var result = await _userService.RestoreUserAsync(id);
+            if (!result)
+                return NotFound();
+
+            return NoContent();
+        }
     }
 }

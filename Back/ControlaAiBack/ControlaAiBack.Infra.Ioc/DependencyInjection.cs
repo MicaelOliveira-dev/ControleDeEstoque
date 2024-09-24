@@ -1,7 +1,7 @@
 ﻿using ControlaAiBack.Application.Interfaces;
 using ControlaAiBack.Application.Services;
 using ControlaAiBack.Domain.Interfaces;
-using ControlaAiBack.Infrastructure.Repositories;
+using ControlaAiBack.Infra.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ControlaAiBack.Infrastructure
