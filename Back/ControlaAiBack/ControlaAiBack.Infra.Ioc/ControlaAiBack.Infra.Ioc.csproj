@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ControlaAiBack.Application\ControlaAiBack.Application.csproj" />
     <ProjectReference Include="..\ControlaAiBack.Domain\ControlaAiBack.Domain.csproj" />
     <ProjectReference Include="..\ControlaAiBack.infra.Data\ControlaAiBack.Infra.Data.csproj" />

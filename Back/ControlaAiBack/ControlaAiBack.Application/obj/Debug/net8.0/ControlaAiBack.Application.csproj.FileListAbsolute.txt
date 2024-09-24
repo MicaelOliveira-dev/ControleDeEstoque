@@ -1,0 +1,16 @@
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\bin\Debug\net8.0\ControlaAiBack.Application.deps.json
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\bin\Debug\net8.0\ControlaAiBack.Application.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\bin\Debug\net8.0\ControlaAiBack.Application.pdb
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\bin\Debug\net8.0\ControlaAiBack.Domain.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\bin\Debug\net8.0\ControlaAiBack.Domain.pdb
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\obj\Debug\net8.0\ControlaAiBack.Application.csproj.AssemblyReference.cache
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\obj\Debug\net8.0\ControlaAiBack.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\obj\Debug\net8.0\ControlaAiBack.Application.AssemblyInfoInputs.cache
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\obj\Debug\net8.0\ControlaAiBack.Application.AssemblyInfo.cs
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\obj\Debug\net8.0\ControlaAiBack.Application.csproj.CoreCompileInputs.cache
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\obj\Debug\net8.0\ControlaAiBack.Application.sourcelink.json
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\obj\Debug\net8.0\Controla.0F9454C3.Up2Date
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\obj\Debug\net8.0\ControlaAiBack.Application.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\obj\Debug\net8.0\refint\ControlaAiBack.Application.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\obj\Debug\net8.0\ControlaAiBack.Application.pdb
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Application\obj\Debug\net8.0\ref\ControlaAiBack.Application.dll

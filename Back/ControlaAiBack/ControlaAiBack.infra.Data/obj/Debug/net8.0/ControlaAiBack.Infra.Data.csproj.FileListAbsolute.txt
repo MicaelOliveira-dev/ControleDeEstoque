@@ -1,0 +1,16 @@
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\bin\Debug\net8.0\ControlaAiBack.Infra.Data.deps.json
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\bin\Debug\net8.0\ControlaAiBack.Infra.Data.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\bin\Debug\net8.0\ControlaAiBack.Infra.Data.pdb
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\bin\Debug\net8.0\ControlaAiBack.Domain.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\bin\Debug\net8.0\ControlaAiBack.Domain.pdb
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\obj\Debug\net8.0\ControlaAiBack.Infra.Data.csproj.AssemblyReference.cache
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\obj\Debug\net8.0\ControlaAiBack.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\obj\Debug\net8.0\ControlaAiBack.Infra.Data.AssemblyInfoInputs.cache
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\obj\Debug\net8.0\ControlaAiBack.Infra.Data.AssemblyInfo.cs
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\obj\Debug\net8.0\ControlaAiBack.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\obj\Debug\net8.0\ControlaAiBack.Infra.Data.sourcelink.json
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\obj\Debug\net8.0\Controla.76097024.Up2Date
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\obj\Debug\net8.0\ControlaAiBack.Infra.Data.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\obj\Debug\net8.0\refint\ControlaAiBack.Infra.Data.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\obj\Debug\net8.0\ControlaAiBack.Infra.Data.pdb
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.infra.Data\obj\Debug\net8.0\ref\ControlaAiBack.Infra.Data.dll

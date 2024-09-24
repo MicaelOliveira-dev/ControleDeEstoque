@@ -1,0 +1,13 @@
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\bin\Debug\net8.0\ControlaAiBack.Domain.deps.json
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\bin\Debug\net8.0\ControlaAiBack.Domain.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\bin\Debug\net8.0\ControlaAiBack.Domain.pdb
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\obj\Debug\net8.0\ControlaAiBack.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\obj\Debug\net8.0\ControlaAiBack.Domain.AssemblyInfoInputs.cache
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\obj\Debug\net8.0\ControlaAiBack.Domain.AssemblyInfo.cs
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\obj\Debug\net8.0\ControlaAiBack.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\obj\Debug\net8.0\ControlaAiBack.Domain.sourcelink.json
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\obj\Debug\net8.0\ControlaAiBack.Domain.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\obj\Debug\net8.0\refint\ControlaAiBack.Domain.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\obj\Debug\net8.0\ControlaAiBack.Domain.pdb
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\obj\Debug\net8.0\ref\ControlaAiBack.Domain.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack.Domain\obj\Debug\net8.0\ControlaAiBack.Domain.csproj.AssemblyReference.cache

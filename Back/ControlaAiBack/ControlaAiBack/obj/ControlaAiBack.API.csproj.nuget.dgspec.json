@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack\\ControlaAiBack.API.csproj": {}
+    "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack\\ControlaAiBack.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\ControlaAiBack.Application.csproj": {
+    "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\ControlaAiBack.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\ControlaAiBack.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\ControlaAiBack.Application.csproj",
         "projectName": "ControlaAiBack.Application",
-        "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\ControlaAiBack.Application.csproj",
+        "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\ControlaAiBack.Application.csproj",
         "packagesPath": "C:\\Users\\Micael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\obj\\",
+        "outputPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Micael\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj": {
-                "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj"
+              "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj": {
+                "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj"
               }
             }
           }
@@ -49,6 +49,20 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -69,14 +83,14 @@
         }
       }
     },
-    "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj": {
+    "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj",
         "projectName": "ControlaAiBack.Domain",
-        "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj",
+        "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj",
         "packagesPath": "C:\\Users\\Micael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Micael\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -110,6 +124,20 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -130,14 +158,14 @@
         }
       }
     },
-    "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj": {
+    "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj",
         "projectName": "ControlaAiBack.Infra.Data",
-        "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj",
+        "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj",
         "packagesPath": "C:\\Users\\Micael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\obj\\",
+        "outputPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Micael\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -155,144 +183,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj": {
-                "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\ControlaAiBack.Infra.Ioc.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\ControlaAiBack.Infra.Ioc.csproj",
-        "projectName": "ControlaAiBack.Infra.Ioc",
-        "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\ControlaAiBack.Infra.Ioc.csproj",
-        "packagesPath": "C:\\Users\\Micael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Micael\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {
-              "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\ControlaAiBack.Application.csproj": {
-                "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\ControlaAiBack.Application.csproj"
-              },
-              "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj": {
-                "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj"
-              },
-              "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack\\ControlaAiBack.API.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack\\ControlaAiBack.API.csproj",
-        "projectName": "ControlaAiBack.API",
-        "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack\\ControlaAiBack.API.csproj",
-        "packagesPath": "C:\\Users\\Micael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Micael\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {
-              "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\ControlaAiBack.Infra.Ioc.csproj": {
-                "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\ControlaAiBack.Infra.Ioc.csproj"
+              "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj": {
+                "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj"
               }
             }
           }
@@ -312,6 +204,182 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\ControlaAiBack.Infra.Ioc.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\ControlaAiBack.Infra.Ioc.csproj",
+        "projectName": "ControlaAiBack.Infra.Ioc",
+        "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\ControlaAiBack.Infra.Ioc.csproj",
+        "packagesPath": "C:\\Users\\Micael\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Micael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\ControlaAiBack.Application.csproj": {
+                "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\ControlaAiBack.Application.csproj"
+              },
+              "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj": {
+                "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Domain\\ControlaAiBack.Domain.csproj"
+              },
+              "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack\\ControlaAiBack.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack\\ControlaAiBack.API.csproj",
+        "projectName": "ControlaAiBack.API",
+        "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack\\ControlaAiBack.API.csproj",
+        "packagesPath": "C:\\Users\\Micael\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Micael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\ControlaAiBack.Infra.Ioc.csproj": {
+                "projectPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\ControlaAiBack.Infra.Ioc.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"

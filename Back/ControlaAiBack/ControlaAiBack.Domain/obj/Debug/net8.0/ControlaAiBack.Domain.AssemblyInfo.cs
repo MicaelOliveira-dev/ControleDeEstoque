@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ControlaAiBack.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29b68ab9323de90c60b873cb2340e4ac026169ec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+697644888822e286a26c435c3424e7edff0ebabb")]
 [assembly: System.Reflection.AssemblyProductAttribute("ControlaAiBack.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ControlaAiBack.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
