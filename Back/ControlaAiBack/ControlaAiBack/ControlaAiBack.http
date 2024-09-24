@@ -1,0 +1,6 @@
+@ControlaAiBack_HostAddress = http://localhost:5205
+
+GET {{ControlaAiBack_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
