@@ -1,7 +1,9 @@
 ﻿using ControlaAiBack.Application.DTOs;
 using ControlaAiBack.Application.DTOs.ControlaAiBack.Application.Dtos;
+using ControlaAiBack.Application.Exceptions;
 using ControlaAiBack.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace ControlaAiBack.API.Controllers
 {
@@ -10,10 +12,12 @@ namespace ControlaAiBack.API.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IEmailService _emailService;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService, IEmailService emailService)
         {
             _userService = userService;
+            _emailService = emailService;
         }
 
         [HttpPost("create-admin")]
@@ -22,16 +26,35 @@ namespace ControlaAiBack.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var user = await _userService.CreateAdminUserAsync(userCreateDto);
-            return CreatedAtAction(nameof(CreateAdminUser), new { id = user.Id }, user);
+            try
+            {
+                var user = await _userService.CreateAdminUserAsync(userCreateDto);
+
+                var emailDto = new EmailDto
+                {
+                    Para = userCreateDto.Email,  
+                    Nome = userCreateDto.NomeEmpresa,    
+                    Senha = userCreateDto.Senha,   
+                    Assunto = "Bem-vindo ao nosso serviço ControlaAí!"
+                };
+
+                _emailService.sendEmail(emailDto);
+
+                return CreatedAtAction(nameof(CreateAdminUser), new { id = user.Id }, user);
+            }
+            catch (UserCreationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
+
 
         [HttpDelete("delete-user/{id}")]
         public async Task<IActionResult> SoftDeleteUser(Guid id)
         {
             var result = await _userService.SoftDeleteUserAsync(id);
             if (!result)
-                return NotFound();
+                throw new UserNotFoundException(id);
 
             return NoContent();
         }
@@ -41,7 +64,7 @@ namespace ControlaAiBack.API.Controllers
         {
             var result = await _userService.RestoreUserAsync(id);
             if (!result)
-                return NotFound();
+                throw new UserNotFoundException(id);
 
             return NoContent();
         }

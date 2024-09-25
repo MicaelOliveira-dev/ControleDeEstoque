@@ -3,18 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{353D3E7D-AE45-4A20-8848-EDF56636D93A}|ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj|c:\\users\\micael\\desktop\\controledeestoque\\back\\controlaaiback\\controlaaiback.infra.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{353D3E7D-AE45-4A20-8848-EDF56636D93A}|ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj|solutionrelative:controlaaiback.infra.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A2109BB-4276-4508-93AA-3DF982AB6827}|ControlaAiBack\\ControlaAiBack.API.csproj|c:\\users\\micael\\desktop\\controledeestoque\\back\\controlaaiback\\controlaaiback\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A2109BB-4276-4508-93AA-3DF982AB6827}|ControlaAiBack\\ControlaAiBack.API.csproj|solutionrelative:controlaaiback\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5195A27-7B40-4E12-9963-E9416723C0B5}|ControlaAiBack.Application\\ControlaAiBack.Application.csproj|c:\\users\\micael\\desktop\\controledeestoque\\back\\controlaaiback\\controlaaiback.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5195A27-7B40-4E12-9963-E9416723C0B5}|ControlaAiBack.Application\\ControlaAiBack.Application.csproj|solutionrelative:controlaaiback.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D5195A27-7B40-4E12-9963-E9416723C0B5}|ControlaAiBack.Application\\ControlaAiBack.Application.csproj|c:\\users\\micael\\desktop\\controledeestoque\\back\\controlaaiback\\controlaaiback.application\\autentication\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D5195A27-7B40-4E12-9963-E9416723C0B5}|ControlaAiBack.Application\\ControlaAiBack.Application.csproj|solutionrelative:controlaaiback.application\\autentication\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,8 +11,24 @@
       "RelativeMoniker": "D:0:0:{353D3E7D-AE45-4A20-8848-EDF56636D93A}|ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj|solutionrelative:controlaaiback.infra.data\\context\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D5195A27-7B40-4E12-9963-E9416723C0B5}|ControlaAiBack.Application\\ControlaAiBack.Application.csproj|c:\\users\\micael\\desktop\\controledeestoque\\back\\controlaaiback\\controlaaiback.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5195A27-7B40-4E12-9963-E9416723C0B5}|ControlaAiBack.Application\\ControlaAiBack.Application.csproj|solutionrelative:controlaaiback.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A2109BB-4276-4508-93AA-3DF982AB6827}|ControlaAiBack\\ControlaAiBack.API.csproj|c:\\users\\micael\\desktop\\controledeestoque\\back\\controlaaiback\\controlaaiback\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A2109BB-4276-4508-93AA-3DF982AB6827}|ControlaAiBack\\ControlaAiBack.API.csproj|solutionrelative:controlaaiback\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{353D3E7D-AE45-4A20-8848-EDF56636D93A}|ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj|c:\\users\\micael\\desktop\\controledeestoque\\back\\controlaaiback\\controlaaiback.infra.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{353D3E7D-AE45-4A20-8848-EDF56636D93A}|ControlaAiBack.infra.Data\\ControlaAiBack.Infra.Data.csproj|solutionrelative:controlaaiback.infra.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{19121F11-0005-41FC-8D08-BFB58E498D0C}|ControlaAiBack.Infra.Ioc\\ControlaAiBack.Infra.Ioc.csproj|c:\\users\\micael\\desktop\\controledeestoque\\back\\controlaaiback\\controlaaiback.infra.ioc\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19121F11-0005-41FC-8D08-BFB58E498D0C}|ControlaAiBack.Infra.Ioc\\ControlaAiBack.Infra.Ioc.csproj|solutionrelative:controlaaiback.infra.ioc\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5195A27-7B40-4E12-9963-E9416723C0B5}|ControlaAiBack.Application\\ControlaAiBack.Application.csproj|c:\\users\\micael\\desktop\\controledeestoque\\back\\controlaaiback\\controlaaiback.application\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5195A27-7B40-4E12-9963-E9416723C0B5}|ControlaAiBack.Application\\ControlaAiBack.Application.csproj|solutionrelative:controlaaiback.application\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,11 +38,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "ControlaAiBack.Application\\Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\Services\\EmailService.cs",
+              "RelativeToolTip": "ControlaAiBack.Application\\Services\\EmailService.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAQwBkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T20:51:16.976Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -48,33 +65,33 @@
               "RelativeDocumentMoniker": "ControlaAiBack.Infra.Ioc\\DependencyInjection.cs",
               "ToolTip": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Infra.Ioc\\DependencyInjection.cs",
               "RelativeToolTip": "ControlaAiBack.Infra.Ioc\\DependencyInjection.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAoAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T21:32:51.195Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "ControlaAiBack.infra.Data\\Repositories\\UserRepository.cs",
               "ToolTip": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "ControlaAiBack.infra.Data\\Repositories\\UserRepository.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAxwBgAAAA3AAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwBcAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T21:31:52.903Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "ControlaAiBack\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack\\Controllers\\UserController.cs",
               "RelativeToolTip": "ControlaAiBack\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwC0AAAAMAAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAgwC4AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T20:42:40.183Z",
               "EditorCaption": ""
@@ -87,14 +104,14 @@
               "RelativeDocumentMoniker": "ControlaAiBack.Application\\Services\\UserService.cs",
               "ToolTip": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\Services\\UserService.cs",
               "RelativeToolTip": "ControlaAiBack.Application\\Services\\UserService.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAowDYAAAAtAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAADYAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T20:41:01.03Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "DbContext.cs",
               "DocumentMoniker": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.infra.Data\\Context\\DbContext.cs",
               "RelativeDocumentMoniker": "ControlaAiBack.infra.Data\\Context\\DbContext.cs",
@@ -107,13 +124,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "PasswordHelper.cs",
               "DocumentMoniker": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\Autentication\\PasswordHelper.cs",
               "RelativeDocumentMoniker": "ControlaAiBack.Application\\Autentication\\PasswordHelper.cs",
               "ToolTip": "C:\\Users\\Micael\\Desktop\\ControleDeEstoque\\Back\\ControlaAiBack\\ControlaAiBack.Application\\Autentication\\PasswordHelper.cs",
               "RelativeToolTip": "ControlaAiBack.Application\\Autentication\\PasswordHelper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T20:18:45.572Z",
               "EditorCaption": ""
