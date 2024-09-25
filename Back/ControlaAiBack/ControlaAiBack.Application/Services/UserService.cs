@@ -18,13 +18,13 @@ namespace ControlaAiBack.Application.Services
 
         public async Task<UserDto> CreateAdminUserAsync(UserCreateDto userCreateDto)
         {
-            var user = new User
+            var user = new Users
             {
                 NomeEmpresa = userCreateDto.NomeEmpresa,
-                NomeProprietario = userCreateDto.NomeProprietario,
+                Nome = userCreateDto.Nome,
                 Email = userCreateDto.Email,
                 SenhaHash = PasswordHelper.HashPassword(userCreateDto.Senha),
-                Permissao = User.UserType.Admin
+                Permissao = Users.UserType.Admin
             };
 
             await _userRepository.AddAsync(user);
@@ -33,7 +33,7 @@ namespace ControlaAiBack.Application.Services
             {
                 Id = user.Id,
                 NomeEmpresa = user.NomeEmpresa,
-                NomeProprietario = user.NomeProprietario,
+                Nome = user.Nome,
                 Email = user.Email,
                 Permissao = user.Permissao
             };

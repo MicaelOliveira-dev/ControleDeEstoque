@@ -2,10 +2,6 @@
 using ControlaAiBack.Domain.Interfaces;
 using ControlaAiBack.Infra.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ControlaAiBack.Infra.Repositories
 {
@@ -18,26 +14,33 @@ namespace ControlaAiBack.Infra.Repositories
             _context = context;
         }
 
-        public async Task<User> GetByIdAsync(Guid id)
+        public async Task<Users> GetByIdAsync(Guid id)
         {
             return await _context.Users
                 .AsNoTracking() 
                 .FirstOrDefaultAsync(u => u.Id == id); 
         }
 
-        public async Task AddAsync(User user)
+        public async Task<Users> GetByEmailAsync(string email)
+        {
+            return await _context.Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(u => u.Email == email);  
+        }
+
+        public async Task AddAsync(Users user)
         {
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(User user)
+        public async Task UpdateAsync(Users user)
         {
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<User>> GetAllAsync()
+        public async Task<IEnumerable<Users>> GetAllAsync()
         {
             return await _context.Users
                 .Where(u => !u.IsDeleted) 

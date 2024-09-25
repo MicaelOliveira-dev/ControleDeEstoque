@@ -13,6 +13,7 @@ namespace ControlaAiBack.Infrastructure
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IAuthService, AuthService>();
         }
     }
 }
