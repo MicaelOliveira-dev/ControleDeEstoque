@@ -46,5 +46,14 @@ namespace ControlaAiBack.Infra.Repositories
                 .Where(u => !u.IsDeleted) 
                 .ToListAsync();
         }
+
+        public async Task<string> GetCompanyNameByAdminIdAsync(Guid adminId)
+        {
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.Id == adminId && !u.IsDeleted);
+
+            return user?.NomeEmpresa; 
+        }
+
     }
 }

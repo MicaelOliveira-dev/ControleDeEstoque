@@ -60,5 +60,36 @@ namespace ControlaAiBack.Application.Services
             await _userRepository.UpdateAsync(user);
             return true;
         }
+
+        public async Task<UserDto> CreateUserAsync(UserCreateDto userCreateDto, Guid adminId)
+        {
+            var user = new Users
+            {
+                NomeEmpresa = userCreateDto.NomeEmpresa,
+                Nome = userCreateDto.Nome,
+                Email = userCreateDto.Email,
+                SenhaHash = PasswordHelper.HashPassword(userCreateDto.Senha),
+                Permissao = Users.UserType.Funcionario
+            };
+
+            await _userRepository.AddAsync(user);
+
+            return new UserDto
+            {
+                Id = user.Id,
+                NomeEmpresa = user.NomeEmpresa,
+                Nome = user.Nome,
+                Email = user.Email,
+                Permissao = user.Permissao
+            };
+        }
+
+
+        public async Task<string> GetCompanyNameByAdminIdAsync(Guid adminId)
+        {
+            var user = await _userRepository.GetByIdAsync(adminId);
+            return user.NomeEmpresa; 
+        }
+
     }
 }

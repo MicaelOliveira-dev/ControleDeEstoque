@@ -3,6 +3,7 @@ using ControlaAiBack.Application.DTOs.ControlaAiBack.Application.Dtos;
 using ControlaAiBack.Application.Exceptions;
 using ControlaAiBack.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
 using System;
 
 namespace ControlaAiBack.API.Controllers
@@ -68,5 +69,75 @@ namespace ControlaAiBack.API.Controllers
 
             return NoContent();
         }
+
+        [HttpPost("create-users/{adminId}")]
+        public async Task<IActionResult> CreateUsersFromFile([FromRoute] Guid adminId, IFormFile file)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial; 
+
+            if (file == null || file.Length == 0)
+                return BadRequest("Arquivo inválido.");
+
+            try
+            {
+                using (var stream = new MemoryStream())
+                {
+                    await file.CopyToAsync(stream);
+                    stream.Position = 0;
+
+                    using (var package = new ExcelPackage(stream))
+                    {
+                        var worksheet = package.Workbook.Worksheets[0]; 
+                        var rowCount = worksheet.Dimension.Rows;
+
+                        var nomeEmpresa = await _userService.GetCompanyNameByAdminIdAsync(adminId);
+
+                        if (string.IsNullOrEmpty(nomeEmpresa))
+                        {
+                            return BadRequest("Nome da empresa não encontrado para o adminId.");
+                        }
+
+                        for (int row = 2; row <= rowCount; row++)
+                        {
+                            var userCreateDto = new UserCreateDto
+                            {
+                                NomeEmpresa = nomeEmpresa, 
+                                Nome = worksheet.Cells[row, 1].Text,
+                                Email = worksheet.Cells[row, 2].Text,
+                                Senha = worksheet.Cells[row, 3].Text
+                            };
+
+                            if (string.IsNullOrEmpty(userCreateDto.NomeEmpresa) ||
+                                string.IsNullOrEmpty(userCreateDto.Nome) ||
+                                string.IsNullOrEmpty(userCreateDto.Email) ||
+                                string.IsNullOrEmpty(userCreateDto.Senha))
+                            {
+                                return BadRequest("Um ou mais campos do usuário estão inválidos.");
+                            }
+
+                            var user = await _userService.CreateUserAsync(userCreateDto, adminId);
+
+                            var emailDto = new EmailDto
+                            {
+                                Para = userCreateDto.Email,
+                                Nome = userCreateDto.Nome,
+                                Senha = userCreateDto.Senha,
+                                Assunto = "Bem-vindo ao nosso serviço ControlaAí!"
+                            };
+
+                            _emailService.sendEmail(emailDto);
+                        }
+                    }
+                }
+
+                return Ok(new { message = "Usuários criados com sucesso!" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro ao processar o arquivo: {ex.Message}");
+            }
+        }
+
+
     }
 }

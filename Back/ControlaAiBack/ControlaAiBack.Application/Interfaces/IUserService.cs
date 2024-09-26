@@ -8,5 +8,7 @@ namespace ControlaAiBack.Application.Interfaces
         Task<UserDto> CreateAdminUserAsync(UserCreateDto userCreateDto);
         Task<bool> SoftDeleteUserAsync(Guid id);
         Task<bool> RestoreUserAsync(Guid id);
+        Task<UserDto> CreateUserAsync(UserCreateDto userCreateDto, Guid adminId);
+        Task<string> GetCompanyNameByAdminIdAsync(Guid adminId);
     }
 }

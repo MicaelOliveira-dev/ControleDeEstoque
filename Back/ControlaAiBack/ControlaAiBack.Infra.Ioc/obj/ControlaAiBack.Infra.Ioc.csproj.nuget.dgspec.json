@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.3.2, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[4.7.1.1, )"
@@ -132,6 +136,10 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.3.2, )"
             },
             "MailKit": {
               "target": "Package",
@@ -215,6 +223,10 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.3.2, )"
             },
             "MailKit": {
               "target": "Package",
@@ -304,6 +316,10 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.3.2, )"
             },
             "MailKit": {
               "target": "Package",
