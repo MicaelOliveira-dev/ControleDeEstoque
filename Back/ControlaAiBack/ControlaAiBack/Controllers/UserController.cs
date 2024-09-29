@@ -1,5 +1,4 @@
 ﻿using ControlaAiBack.Application.DTOs;
-using ControlaAiBack.Application.DTOs.ControlaAiBack.Application.Dtos;
 using ControlaAiBack.Application.Exceptions;
 using ControlaAiBack.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -24,21 +23,19 @@ namespace ControlaAiBack.API.Controllers
         public async Task<IActionResult> CreateAdminUser([FromBody] UserCreateDto userCreateDto)
         {
             if (!ModelState.IsValid)
+            {
                 return BadRequest(ModelState);
+            }
+
+            if (!IsUserCreateDtoValid(userCreateDto))
+            {
+                return BadRequest("Um ou mais campos do usuário estão inválidos.");
+            }
 
             try
             {
                 var user = await _userService.CreateAdminUserAsync(userCreateDto);
-
-                var emailDto = new EmailDto
-                {
-                    Para = userCreateDto.Email,
-                    Nome = userCreateDto.NomeEmpresa,
-                    Senha = userCreateDto.Senha,
-                    Assunto = "Bem-vindo ao nosso serviço ControlaAí!"
-                };
-
-                _emailService.sendEmail(emailDto);
+                await SendWelcomeEmail(user, userCreateDto);
 
                 return CreatedAtAction(nameof(CreateAdminUser), new { id = user.Id }, user);
             }
@@ -48,13 +45,38 @@ namespace ControlaAiBack.API.Controllers
             }
         }
 
+        [HttpPost("create-user/{adminId}")]
+        public async Task<IActionResult> CreateUser([FromBody] UserCreateDto userCreateDto, Guid adminId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (!IsUserCreateDtoValid(userCreateDto))
+            {
+                return BadRequest("Um ou mais campos do usuário estão inválidos.");
+            }
+
+            try
+            {
+                var user = await _userService.CreateUserByAdminAsync(userCreateDto, adminId);
+                await SendWelcomeEmail(user, userCreateDto);
+
+                return CreatedAtAction(nameof(CreateUser), new { id = user.Id }, user);
+            }
+            catch (UserCreationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
         [HttpDelete("delete-user/{id}")]
         public async Task<IActionResult> SoftDeleteUser(Guid id)
         {
             var result = await _userService.SoftDeleteUserAsync(id);
             if (!result)
-                throw new UserNotFoundException(id);
+                return NotFound(); 
 
             return NoContent();
         }
@@ -64,18 +86,18 @@ namespace ControlaAiBack.API.Controllers
         {
             var result = await _userService.RestoreUserAsync(id);
             if (!result)
-                throw new UserNotFoundException(id);
+                return NotFound(); 
 
             return NoContent();
         }
 
-        [HttpPost("create-users/{adminId}")]
+        [HttpPost("create-users-using-excel/{adminId}")]
         public async Task<IActionResult> CreateUsersFromFile([FromRoute] Guid adminId, IFormFile file)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             if (file == null || file.Length == 0)
-                throw new InvalidFileException("Arquivo inválido.");
+                return BadRequest("Arquivo inválido.");
 
             try
             {
@@ -93,7 +115,7 @@ namespace ControlaAiBack.API.Controllers
 
                         if (string.IsNullOrEmpty(nomeEmpresa))
                         {
-                            throw new CompanyNameNotFoundException(adminId);
+                            return NotFound("Nome da empresa não encontrado."); 
                         }
 
                         for (int row = 2; row <= rowCount; row++)
@@ -106,25 +128,18 @@ namespace ControlaAiBack.API.Controllers
                                 Senha = worksheet.Cells[row, 3].Text
                             };
 
-                            if (string.IsNullOrEmpty(userCreateDto.NomeEmpresa) ||
-                                string.IsNullOrEmpty(userCreateDto.Nome) ||
-                                string.IsNullOrEmpty(userCreateDto.Email) ||
-                                string.IsNullOrEmpty(userCreateDto.Senha))
+                            if (!IsUserCreateDtoValid(userCreateDto))
                             {
-                                throw new InvalidUserFieldsException("Um ou mais campos do usuário estão inválidos.");
+                                return BadRequest("Um ou mais campos do usuário estão inválidos.");
                             }
 
-                            var user = await _userService.CreateUserAsync(userCreateDto, adminId);
-
-                            var emailDto = new EmailDto
+                            if (!await _emailService.IsValidEmail(userCreateDto.Email))
                             {
-                                Para = userCreateDto.Email,
-                                Nome = userCreateDto.Nome,
-                                Senha = userCreateDto.Senha,
-                                Assunto = "Bem-vindo ao nosso serviço ControlaAí!"
-                            };
+                                return BadRequest($"O endereço de e-mail '{userCreateDto.Email}' fornecido não é válido.");
+                            }
 
-                            _emailService.sendEmail(emailDto);
+                            var user = await _userService.CreateUserByAdminAsync(userCreateDto, adminId);
+                            await SendWelcomeEmail(user, userCreateDto);
                         }
                     }
                 }
@@ -133,9 +148,35 @@ namespace ControlaAiBack.API.Controllers
             }
             catch (Exception ex)
             {
-                throw new InvalidFileFormatException($"{ex.Message}");
+                return BadRequest($"Erro no formato do arquivo: {ex.Message}"); 
+            }
+        }
+
+        private bool IsUserCreateDtoValid(UserCreateDto userCreateDto)
+        {
+            return !string.IsNullOrEmpty(userCreateDto.Nome) &&
+                   !string.IsNullOrEmpty(userCreateDto.Senha) &&
+                   !string.IsNullOrEmpty(userCreateDto.Email);
+        }
+
+        private async Task SendWelcomeEmail(UserDto user, UserCreateDto userCreateDto)
+        {
+            var emailDto = new EmailDto
+            {
+                Para = userCreateDto.Email,
+                Nome = userCreateDto.NomeEmpresa,
+                Senha = userCreateDto.Senha,
+                Assunto = "Bem-vindo ao nosso serviço ControlaAí!"
+            };
+
+            try
+            {
+                await _emailService.sendEmail(emailDto); 
+            }
+            catch (Exception emailEx)
+            {
+                throw new EmailSendingException(userCreateDto.Email, emailEx);
             }
         }
     }
 }
-

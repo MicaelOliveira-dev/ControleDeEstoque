@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ControlaAiBack.Infra.Ioc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4899f57bdd2f109d7ad8340127a0e2313b37c5c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89a1d3fe9a4bd96761acf06d962b912114a15200")]
 [assembly: System.Reflection.AssemblyProductAttribute("ControlaAiBack.Infra.Ioc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ControlaAiBack.Infra.Ioc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,5 +9,16 @@ namespace ControlaAiBack.Infra.Data
         {
         }
         public DbSet<Users> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Criando GUID com Entity Framework
+            modelBuilder.Entity<Users>()
+                .Property(u => u.Id)
+                .ValueGeneratedOnAdd(); 
+
+            base.OnModelCreating(modelBuilder);
+        }
+
     }
 }

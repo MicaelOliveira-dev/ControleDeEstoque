@@ -18,8 +18,13 @@ namespace ControlaAiBack.Application.Services
             _config = config;
         }
 
-        public void sendEmail(EmailDto request)
+        public async Task sendEmail(EmailDto request)
         {
+            if (string.IsNullOrEmpty(request.Para) || !await IsValidEmail(request.Para))
+            {
+                throw new EmailSendingException(request.Para, new Exception("O endereço de e-mail não é válido."));
+            }
+
             var email = new MimeMessage();
             email.From.Add(MailboxAddress.Parse(_config.GetSection("Email:UserName").Value));
             email.To.Add(MailboxAddress.Parse(request.Para));
@@ -140,6 +145,19 @@ namespace ControlaAiBack.Application.Services
                 {
                     client.Disconnect(true);
                 }
+            }
+        }
+
+        public async Task<bool> IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

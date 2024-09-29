@@ -1,95 +1,96 @@
 ﻿using ControlaAiBack.Application.Autentication;
 using ControlaAiBack.Application.DTOs;
-using ControlaAiBack.Application.DTOs.ControlaAiBack.Application.Dtos;
 using ControlaAiBack.Application.Interfaces;
 using ControlaAiBack.Domain.Entities;
 using ControlaAiBack.Domain.Interfaces;
 
-namespace ControlaAiBack.Application.Services
+public class UserService : IUserService
 {
-    public class UserService : IUserService
+    private readonly IUserRepository _userRepository;
+
+    public UserService(IUserRepository userRepository)
     {
-        private readonly IUserRepository _userRepository;
+        _userRepository = userRepository;
+    }
 
-        public UserService(IUserRepository userRepository)
+    public async Task<UserDto> CreateUserAsync(UserCreateDto userCreateDto, Users.UserType userType)
+    {
+        var user = new Users
         {
-            _userRepository = userRepository;
-        }
+            NomeEmpresa = userCreateDto.NomeEmpresa,
+            Nome = userCreateDto.Nome,
+            Email = userCreateDto.Email,
+            SenhaHash = PasswordHelper.HashPassword(userCreateDto.Senha),
+            Permissao = userType
+        };
 
-        public async Task<UserDto> CreateAdminUserAsync(UserCreateDto userCreateDto)
+        await _userRepository.AddAsync(user);
+
+        return new UserDto
         {
-            var user = new Users
-            {
-                NomeEmpresa = userCreateDto.NomeEmpresa,
-                Nome = userCreateDto.Nome,
-                Email = userCreateDto.Email,
-                SenhaHash = PasswordHelper.HashPassword(userCreateDto.Senha),
-                Permissao = Users.UserType.Admin
-            };
+            Id = user.Id,
+            NomeEmpresa = user.NomeEmpresa,
+            Nome = user.Nome,
+            Email = user.Email,
+            Permissao = user.Permissao
+        };
+    }
 
-            await _userRepository.AddAsync(user);
+    public async Task<UserDto> CreateAdminUserAsync(UserCreateDto userCreateDto)
+    {
+        return await CreateUserAsync(userCreateDto, Users.UserType.Admin);
+    }
 
-            return new UserDto
-            {
-                Id = user.Id,
-                NomeEmpresa = user.NomeEmpresa,
-                Nome = user.Nome,
-                Email = user.Email,
-                Permissao = user.Permissao
-            };
-        }
+    public async Task<bool> SoftDeleteUserAsync(Guid id)
+    {
+        var user = await _userRepository.GetByIdAsync(id);
+        if (user == null || user.IsDeleted) return false;
 
-        public async Task<bool> SoftDeleteUserAsync(Guid id)
+        user.IsDeleted = true;
+        user.DeletedAt = DateTime.UtcNow;
+        await _userRepository.UpdateAsync(user);
+        return true;
+    }
+
+    public async Task<bool> RestoreUserAsync(Guid id)
+    {
+        var user = await _userRepository.GetByIdAsync(id);
+        if (user == null || !user.IsDeleted) return false;
+
+        user.IsDeleted = false;
+        user.DeletedAt = null;
+        await _userRepository.UpdateAsync(user);
+        return true;
+    }
+
+    public async Task<UserDto> CreateUserByAdminAsync(UserCreateDto userCreateDto, Guid adminId)
+    {
+        var nomeEmpresa = await GetCompanyNameByAdminIdAsync(adminId);
+
+        var user = new Users
         {
-            var user = await _userRepository.GetByIdAsync(id);
-            if (user == null || user.IsDeleted) return false;
+            NomeEmpresa = nomeEmpresa,
+            Nome = userCreateDto.Nome,
+            Email = userCreateDto.Email,
+            SenhaHash = PasswordHelper.HashPassword(userCreateDto.Senha),
+            Permissao = Users.UserType.Funcionario
+        };
 
-            user.IsDeleted = true;
-            user.DeletedAt = DateTime.UtcNow; 
-            await _userRepository.UpdateAsync(user);
-            return true;
-        }
+        await _userRepository.AddAsync(user);
 
-        public async Task<bool> RestoreUserAsync(Guid id)
+        return new UserDto
         {
-            var user = await _userRepository.GetByIdAsync(id);
-            if (user == null || !user.IsDeleted) return false;
+            Id = user.Id,
+            NomeEmpresa = user.NomeEmpresa,
+            Nome = user.Nome,
+            Email = user.Email,
+            Permissao = user.Permissao
+        };
+    }
 
-            user.IsDeleted = false;
-            user.DeletedAt = null; 
-            await _userRepository.UpdateAsync(user);
-            return true;
-        }
-
-        public async Task<UserDto> CreateUserAsync(UserCreateDto userCreateDto, Guid adminId)
-        {
-            var user = new Users
-            {
-                NomeEmpresa = userCreateDto.NomeEmpresa,
-                Nome = userCreateDto.Nome,
-                Email = userCreateDto.Email,
-                SenhaHash = PasswordHelper.HashPassword(userCreateDto.Senha),
-                Permissao = Users.UserType.Funcionario
-            };
-
-            await _userRepository.AddAsync(user);
-
-            return new UserDto
-            {
-                Id = user.Id,
-                NomeEmpresa = user.NomeEmpresa,
-                Nome = user.Nome,
-                Email = user.Email,
-                Permissao = user.Permissao
-            };
-        }
-
-
-        public async Task<string> GetCompanyNameByAdminIdAsync(Guid adminId)
-        {
-            var user = await _userRepository.GetByIdAsync(adminId);
-            return user.NomeEmpresa; 
-        }
-
+    public async Task<string?> GetCompanyNameByAdminIdAsync(Guid adminId) 
+    {
+        var user = await _userRepository.GetByIdAsync(adminId);
+        return user?.NomeEmpresa; 
     }
 }

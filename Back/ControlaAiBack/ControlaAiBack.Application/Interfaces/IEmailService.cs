@@ -9,6 +9,7 @@ namespace ControlaAiBack.Application.Interfaces
 {
     public interface IEmailService
     {
-        void sendEmail(EmailDto request);
+        Task sendEmail(EmailDto request);
+        Task<bool> IsValidEmail(string email);
     }
 }

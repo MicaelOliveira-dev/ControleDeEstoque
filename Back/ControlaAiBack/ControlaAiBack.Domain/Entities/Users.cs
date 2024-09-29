@@ -3,7 +3,7 @@ namespace ControlaAiBack.Domain.Entities
 {
     public class Users
     {
-        public Guid Id { get; set; } = Guid.NewGuid();  
+        public Guid Id { get; set; } 
         public string NomeEmpresa { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
