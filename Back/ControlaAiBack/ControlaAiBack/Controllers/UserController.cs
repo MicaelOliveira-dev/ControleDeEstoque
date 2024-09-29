@@ -19,7 +19,7 @@ namespace ControlaAiBack.API.Controllers
             _emailService = emailService;
         }
 
-        [HttpPost("create-admin")]
+        [HttpPost("CreateAdmin")]
         public async Task<IActionResult> CreateAdminUser([FromBody] UserCreateDto userCreateDto)
         {
             if (!ModelState.IsValid)
@@ -45,7 +45,7 @@ namespace ControlaAiBack.API.Controllers
             }
         }
 
-        [HttpPost("create-user/{adminId}")]
+        [HttpPost("{adminId}/CreateUser")]
         public async Task<IActionResult> CreateUser([FromBody] UserCreateDto userCreateDto, Guid adminId)
         {
             if (!ModelState.IsValid)
@@ -71,27 +71,7 @@ namespace ControlaAiBack.API.Controllers
             }
         }
 
-        [HttpDelete("delete-user/{id}")]
-        public async Task<IActionResult> SoftDeleteUser(Guid id)
-        {
-            var result = await _userService.SoftDeleteUserAsync(id);
-            if (!result)
-                return NotFound(); 
-
-            return NoContent();
-        }
-
-        [HttpPut("restore-user/{id}")]
-        public async Task<IActionResult> RestoreUser(Guid id)
-        {
-            var result = await _userService.RestoreUserAsync(id);
-            if (!result)
-                return NotFound(); 
-
-            return NoContent();
-        }
-
-        [HttpPost("create-users-using-excel/{adminId}")]
+        [HttpPost("{adminId}/CreateUsersFromFile")]
         public async Task<IActionResult> CreateUsersFromFile([FromRoute] Guid adminId, IFormFile file)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -115,7 +95,7 @@ namespace ControlaAiBack.API.Controllers
 
                         if (string.IsNullOrEmpty(nomeEmpresa))
                         {
-                            return NotFound("Nome da empresa não encontrado."); 
+                            return NotFound("Nome da empresa não encontrado.");
                         }
 
                         for (int row = 2; row <= rowCount; row++)
@@ -148,8 +128,28 @@ namespace ControlaAiBack.API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"Erro no formato do arquivo: {ex.Message}"); 
+                return BadRequest($"Erro no formato do arquivo: {ex.Message}");
             }
+        }
+
+        [HttpDelete("DeleteUser/{id}")]
+        public async Task<IActionResult> SoftDeleteUser(Guid id)
+        {
+            var result = await _userService.SoftDeleteUserAsync(id);
+            if (!result)
+                return NotFound(); 
+
+            return NoContent();
+        }
+
+        [HttpPut("RestoreUser/{id}")]
+        public async Task<IActionResult> RestoreUser(Guid id)
+        {
+            var result = await _userService.RestoreUserAsync(id);
+            if (!result)
+                return NotFound(); 
+
+            return NoContent();
         }
 
         private bool IsUserCreateDtoValid(UserCreateDto userCreateDto)
