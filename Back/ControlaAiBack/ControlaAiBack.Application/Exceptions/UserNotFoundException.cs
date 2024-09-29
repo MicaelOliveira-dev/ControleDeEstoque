@@ -17,4 +17,12 @@ namespace ControlaAiBack.Application.Exceptions
         {
         }
     }
+
+    public class InvalidUserFieldsException : Exception
+    {
+        public InvalidUserFieldsException(string message)
+            : base(message)
+        {
+        }
+    }
 }

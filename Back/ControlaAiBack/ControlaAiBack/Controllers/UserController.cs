@@ -4,7 +4,6 @@ using ControlaAiBack.Application.Exceptions;
 using ControlaAiBack.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
-using System;
 
 namespace ControlaAiBack.API.Controllers
 {
@@ -33,9 +32,9 @@ namespace ControlaAiBack.API.Controllers
 
                 var emailDto = new EmailDto
                 {
-                    Para = userCreateDto.Email,  
-                    Nome = userCreateDto.NomeEmpresa,    
-                    Senha = userCreateDto.Senha,   
+                    Para = userCreateDto.Email,
+                    Nome = userCreateDto.NomeEmpresa,
+                    Senha = userCreateDto.Senha,
                     Assunto = "Bem-vindo ao nosso serviço ControlaAí!"
                 };
 
@@ -73,10 +72,10 @@ namespace ControlaAiBack.API.Controllers
         [HttpPost("create-users/{adminId}")]
         public async Task<IActionResult> CreateUsersFromFile([FromRoute] Guid adminId, IFormFile file)
         {
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial; 
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             if (file == null || file.Length == 0)
-                return BadRequest("Arquivo inválido.");
+                throw new InvalidFileException("Arquivo inválido.");
 
             try
             {
@@ -87,21 +86,21 @@ namespace ControlaAiBack.API.Controllers
 
                     using (var package = new ExcelPackage(stream))
                     {
-                        var worksheet = package.Workbook.Worksheets[0]; 
+                        var worksheet = package.Workbook.Worksheets[0];
                         var rowCount = worksheet.Dimension.Rows;
 
                         var nomeEmpresa = await _userService.GetCompanyNameByAdminIdAsync(adminId);
 
                         if (string.IsNullOrEmpty(nomeEmpresa))
                         {
-                            return BadRequest("Nome da empresa não encontrado para o adminId.");
+                            throw new CompanyNameNotFoundException(adminId);
                         }
 
                         for (int row = 2; row <= rowCount; row++)
                         {
                             var userCreateDto = new UserCreateDto
                             {
-                                NomeEmpresa = nomeEmpresa, 
+                                NomeEmpresa = nomeEmpresa,
                                 Nome = worksheet.Cells[row, 1].Text,
                                 Email = worksheet.Cells[row, 2].Text,
                                 Senha = worksheet.Cells[row, 3].Text
@@ -112,7 +111,7 @@ namespace ControlaAiBack.API.Controllers
                                 string.IsNullOrEmpty(userCreateDto.Email) ||
                                 string.IsNullOrEmpty(userCreateDto.Senha))
                             {
-                                return BadRequest("Um ou mais campos do usuário estão inválidos.");
+                                throw new InvalidUserFieldsException("Um ou mais campos do usuário estão inválidos.");
                             }
 
                             var user = await _userService.CreateUserAsync(userCreateDto, adminId);
@@ -134,10 +133,9 @@ namespace ControlaAiBack.API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"Erro ao processar o arquivo: {ex.Message}");
+                throw new InvalidFileFormatException($"{ex.Message}");
             }
         }
-
-
     }
 }
+

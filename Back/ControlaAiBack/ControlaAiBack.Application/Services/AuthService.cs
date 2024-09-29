@@ -8,6 +8,7 @@ using System.Security.Claims;
 using System.Text;
 using ControlaAiBack.Domain.Entities;
 using ControlaAiBack.Application.Interfaces;
+using ControlaAiBack.Application.Exceptions;
 
 namespace ControlaAiBack.Application.Services
 {
@@ -28,7 +29,7 @@ namespace ControlaAiBack.Application.Services
 
             if (user == null || !PasswordHelper.VerifyPassword(loginDto.Password, user.SenhaHash))
             {
-                throw new Exception("Invalid login credentials.");
+                throw new InvalidLoginException("Invalid login credentials.");
             }
 
             var token = GenerateJwtToken(user);

@@ -1,7 +1,6 @@
 ﻿using ControlaAiBack.Application.DTOs;
 using ControlaAiBack.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace ControlaAiBack.Api.Controllers
 {
@@ -29,7 +28,7 @@ namespace ControlaAiBack.Api.Controllers
                 var tokenData = await _authService.LoginAsync(loginDto);
                 return Ok(tokenData);
             }
-            catch (Exception ex)
+            catch (UnauthorizedAccessException ex)
             {
                 return Unauthorized(new { message = ex.Message });
             }
