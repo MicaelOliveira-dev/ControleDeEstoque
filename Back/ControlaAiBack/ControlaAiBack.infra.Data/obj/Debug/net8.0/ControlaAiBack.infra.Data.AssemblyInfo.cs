@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ControlaAiBack.Infra.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89a1d3fe9a4bd96761acf06d962b912114a15200")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad1b29158fd49c5bdcc4db88fe793bcfc3504cbd")]
 [assembly: System.Reflection.AssemblyProductAttribute("ControlaAiBack.Infra.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ControlaAiBack.Infra.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

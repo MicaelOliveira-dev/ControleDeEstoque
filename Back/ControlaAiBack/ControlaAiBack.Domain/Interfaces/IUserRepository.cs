@@ -15,6 +15,6 @@ namespace ControlaAiBack.Domain.Interfaces
         Task<IEnumerable<Users>> GetAllAsync();
         Task<Users> GetByEmailAsync(string email);
         Task<string> GetCompanyNameByAdminIdAsync(Guid adminId);
-
+        Task<List<Users>> GetUsersByCompanyNameAsync(string companyName);
     }
 }

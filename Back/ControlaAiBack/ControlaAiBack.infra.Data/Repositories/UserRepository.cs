@@ -28,6 +28,14 @@ namespace ControlaAiBack.Infra.Repositories
                 .FirstOrDefaultAsync(u => u.Email == email);  
         }
 
+        public async Task<List<Users>> GetUsersByCompanyNameAsync(string companyName)
+        {
+            return await _context.Users
+                .AsNoTracking()
+                .Where(u => u.NomeEmpresa == companyName && !u.IsDeleted)
+                .ToListAsync();
+        }
+
         public async Task AddAsync(Users user)
         {
             await _context.Users.AddAsync(user);

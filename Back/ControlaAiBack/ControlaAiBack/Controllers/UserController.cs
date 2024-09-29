@@ -132,6 +132,50 @@ namespace ControlaAiBack.API.Controllers
             }
         }
 
+        [HttpGet("{companyName}/ExportUsers")]
+        public async Task<IActionResult> ExportUsers(string companyName)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            try
+            {
+                var users = await _userService.GetUsersByCompanyNameAsync(companyName);
+                if (users == null || !users.Any())
+                {
+                    return NotFound("Nenhum usuário encontrado para este admin.");
+                }
+
+                using (var package = new ExcelPackage())
+                {
+                    var worksheet = package.Workbook.Worksheets.Add("Usuários");
+                    worksheet.Cells[1, 1].Value = "Nome";
+                    worksheet.Cells[1, 2].Value = "NomeEmpresa";
+                    worksheet.Cells[1, 3].Value = "Email";
+                    worksheet.Cells[1, 4].Value = "Permissao";
+
+                    for (int i = 0; i < users.Count; i++)
+                    {
+                        worksheet.Cells[i + 2, 1].Value = users[i].Nome;
+                        worksheet.Cells[i + 2, 2].Value = users[i].NomeEmpresa;
+                        worksheet.Cells[i + 2, 3].Value = users[i].Email;
+                        worksheet.Cells[i + 2, 4].Value = users[i].Permissao;
+                    }
+
+                    var stream = new MemoryStream();
+                    await package.SaveAsAsync(stream);
+                    stream.Position = 0;
+
+                    var fileName = $"Usuarios_{companyName}.xlsx";
+                    return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro ao gerar a planilha: {ex.Message}");
+            }
+        }
+
+
         [HttpDelete("DeleteUser/{id}")]
         public async Task<IActionResult> SoftDeleteUser(Guid id)
         {

@@ -88,6 +88,19 @@ public class UserService : IUserService
         };
     }
 
+    public async Task<List<UserDto>> GetUsersByCompanyNameAsync(string companyName)
+    {
+        var users = await _userRepository.GetUsersByCompanyNameAsync(companyName);
+        return users.Select(user => new UserDto
+        {
+            Id = user.Id,
+            Nome = user.Nome,
+            NomeEmpresa = user.NomeEmpresa,
+            Email = user.Email, 
+            Permissao = user.Permissao
+        }).ToList();
+    }
+
     public async Task<string?> GetCompanyNameByAdminIdAsync(Guid adminId) 
     {
         var user = await _userRepository.GetByIdAsync(adminId);
