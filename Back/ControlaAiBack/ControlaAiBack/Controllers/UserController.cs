@@ -175,6 +175,23 @@ namespace ControlaAiBack.API.Controllers
             }
         }
 
+        [HttpPut("EditUser/{id}")]
+        public async Task<IActionResult> UpdateUser(Guid id, [FromBody] UserUpdateDto userUpdateDto)
+        {
+            try
+            {
+                await _userService.UpdateUserAsync(id, userUpdateDto.Nome, userUpdateDto.Email, userUpdateDto.Senha);
+                return NoContent();
+            }
+            catch (UserNotFoundException)
+            {
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
 
         [HttpDelete("DeleteUser/{id}")]
         public async Task<IActionResult> SoftDeleteUser(Guid id)

@@ -1,5 +1,6 @@
 ﻿using ControlaAiBack.Application.Autentication;
 using ControlaAiBack.Application.DTOs;
+using ControlaAiBack.Application.Exceptions;
 using ControlaAiBack.Application.Interfaces;
 using ControlaAiBack.Domain.Entities;
 using ControlaAiBack.Domain.Interfaces;
@@ -86,6 +87,31 @@ public class UserService : IUserService
             Email = user.Email,
             Permissao = user.Permissao
         };
+    }
+
+    public async Task<bool> UpdateUserAsync(Guid id, string? name, string? email, string? password)
+    {
+        var user = await _userRepository.GetByIdAsync(id);
+        if (user == null) throw new UserNotFoundException(id);
+
+        if (!string.IsNullOrWhiteSpace(name) && name != "string")
+            user.Nome = name;
+
+        if (!string.IsNullOrWhiteSpace(email) && email != "string")
+            user.Email = email;
+
+        if (!string.IsNullOrWhiteSpace(password) && password != "string")
+            user.SenhaHash = PasswordHelper.HashPassword(password);
+
+        await _userRepository.UpdateAsync(user);
+        return true;
+    }
+
+
+
+    public async Task<Users> GetUserByIdAsync(Guid id)
+    {
+        return await _userRepository.GetByIdAsync(id);
     }
 
     public async Task<List<UserDto>> GetUsersByCompanyNameAsync(string companyName)

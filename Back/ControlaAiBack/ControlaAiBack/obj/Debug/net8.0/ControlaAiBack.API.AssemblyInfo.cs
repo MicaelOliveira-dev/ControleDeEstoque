@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ControlaAiBack.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad1b29158fd49c5bdcc4db88fe793bcfc3504cbd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7659a4162136d2f9bcc6a9feb1872f280f8a98a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ControlaAiBack.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ControlaAiBack.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

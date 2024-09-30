@@ -12,5 +12,7 @@ namespace ControlaAiBack.Application.Interfaces
         Task<UserDto> CreateUserByAdminAsync(UserCreateDto userCreateDto, Guid adminId);
         Task<List<UserDto>> GetUsersByCompanyNameAsync(string companyName);
         Task<string?> GetCompanyNameByAdminIdAsync(Guid adminId);
+        Task<bool> UpdateUserAsync(Guid id, string? name, string? email, string? password);
+        Task<Users> GetUserByIdAsync(Guid id);
     }
 }

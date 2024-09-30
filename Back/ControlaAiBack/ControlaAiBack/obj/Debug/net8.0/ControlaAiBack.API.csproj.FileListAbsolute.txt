@@ -85,3 +85,5 @@ C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack\obj
 C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack\obj\Debug\net8.0\ControlaAiBack.API.pdb
 C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack\obj\Debug\net8.0\ControlaAiBack.API.genruntimeconfig.cache
 C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack\obj\Debug\net8.0\ref\ControlaAiBack.API.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Micael\Desktop\ControleDeEstoque\Back\ControlaAiBack\ControlaAiBack\bin\Debug\net8.0\Newtonsoft.Json.dll
