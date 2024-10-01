@@ -6,7 +6,6 @@ interface ButtonProps {
   disabled?: boolean;                
 }
 
-// Componente Button funcional com props
 const Button: React.FC<ButtonProps> = ({ text, onClick, disabled }) => {
   return (
     <button 
