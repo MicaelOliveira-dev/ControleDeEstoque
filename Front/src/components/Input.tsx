@@ -7,7 +7,7 @@ interface InputProps {
     placeholder?: string;       
     value?: string;  
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; 
-    onIconClick: () => void; 
+    onIconClick?: () => void; 
     icon?: React.ReactNode;
 }
 
@@ -19,7 +19,7 @@ const Input: React.FC<InputProps> = ({
     value = '',
     onChange,
     onIconClick, 
-    icon 
+    icon,
 }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -30,7 +30,7 @@ const Input: React.FC<InputProps> = ({
             {text}
         </label>
         <div 
-            className="flex mt-1 block w-full md:w-[385px] h-[50px] md:h-[50px] border border-[#E2E8F0] rounded-md shadow-sm justify-between"
+            className="flex mt-1 block w-full md:w-[385px] h-[50px] md:h-[50px] border border-[#E2E8F0] rounded-md shadow-sm justify-between mb-[16px]"
         > 
             <input
                 ref={inputRef} 
@@ -39,7 +39,7 @@ const Input: React.FC<InputProps> = ({
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
-                className={`w-[90%] font-['Titillium_Web'] text-black outline-none pr-10 pl-[12px]`} 
+                className={`w-[88%] font-['Titillium_Web'] text-black outline-none pr-10 pl-[12px]`} 
                 style={{ paddingRight: '2.5rem' }} 
             />
             {icon && (
