@@ -1,23 +1,44 @@
-import userIcon from '../assets/icons-menu/user.svg'; // Icone do usuário
-import relatorioIcon from '../assets/icons-menu/relatorios.svg'; // Ícone do dashboard
+import { useState } from 'react';
+import userIcon from '../assets/icons-menu/user.svg'; 
+import alert from '../assets/icons-menu/alert.svg'; 
+import NotificationModal from './NotificationModal';
 
 const Header = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setModalOpen(!isModalOpen);
+  };
+
   return (
-    <header className="flex justify-between items-center bg-purple-700 text-white p-4 shadow-md">
-      <div className="">
-        <h1 className="text-xl font-bold">Dashboard</h1>
-        <h3>Nome da Empresa</h3>
-      </div>
-      <div className="flex items-center space-x-4">
-        <div className="flex items-center cursor-pointer hover:bg-purple-600 p-2 rounded">
-          <img src={relatorioIcon} alt="Dashboard" className="w-6 h-6 mr-2" />
+    <>
+      <header className="flex justify-between items-center bg-[#4A148C] text-white p-4 shadow-md">
+        <div className='font-["Titillium_Web"]'>
+          <h1 className="text-[30px] font-bold">Dashboard</h1>
+          <h3 className='font-bold text-[20px]'>Panificadora Rancho dos Pães</h3>
         </div>
-        <div className="flex items-center cursor-pointer hover:bg-purple-600 p-2 rounded">
-            <img src={userIcon} alt="User" className="w-6 h-6" />
-            <span className="mr-2">Admin</span>          
+        <div className="flex items-center space-x-3 font-['Titillium_Web']">
+          <div className="flex space-x-4">
+            <div 
+              className="relative cursor-pointer hover:bg-purple-600 p-2 rounded"
+              onClick={toggleModal}
+            >
+              <img src={alert} alt="Alertas" className="w-6 h-6 mt-[4px]" />
+              <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center mt-[4px]">3</span>
+            </div>
+          </div>
+          <div className="flex items-center cursor-pointer hover:bg-purple-600 rounded">
+            <img src={userIcon} alt="User" className="w-8 h-8 mr-2 mt-[4px]" />
+            <div className='flex flex-col'>
+              <span>Micael Oliveira</span>
+              <span className='text-[12px]'>Admin</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      <NotificationModal isOpen={isModalOpen} onClose={toggleModal} />
+    </>
   );
 };
 
