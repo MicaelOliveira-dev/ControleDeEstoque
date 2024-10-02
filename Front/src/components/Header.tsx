@@ -3,7 +3,8 @@ import userIcon from '../assets/icons-menu/user.svg';
 import alert from '../assets/icons-menu/alert.svg'; 
 import NotificationModal from './NotificationModal';
 
-const Header = () => {
+// Defina as propriedades esperadas para o Header
+const Header = ({ pageTitle, companyName, userName, userRole }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const toggleModal = () => {
@@ -14,8 +15,8 @@ const Header = () => {
     <>
       <header className="flex justify-between items-center bg-[#4A148C] text-white p-4 shadow-md">
         <div className='font-["Titillium_Web"]'>
-          <h1 className="text-[30px] font-bold">Dashboard</h1>
-          <h3 className='font-bold text-[20px]'>Panificadora Rancho dos Pães</h3>
+          <h1 className="text-[30px] font-bold">{pageTitle}</h1>
+          <h3 className='font-bold text-[20px]'>{companyName}</h3>
         </div>
         <div className="flex items-center space-x-3 font-['Titillium_Web']">
           <div className="flex space-x-4">
@@ -30,14 +31,21 @@ const Header = () => {
           <div className="flex items-center cursor-pointer hover:bg-purple-600 rounded">
             <img src={userIcon} alt="User" className="w-8 h-8 mr-2 mt-[4px]" />
             <div className='flex flex-col'>
-              <span>Micael Oliveira</span>
-              <span className='text-[12px]'>Admin</span>
+              <span>{userName}</span>
+              <span className='text-[12px]'>{userRole}</span>
             </div>
           </div>
         </div>
       </header>
 
-      <NotificationModal isOpen={isModalOpen} onClose={toggleModal} />
+      <NotificationModal 
+        isOpen={isModalOpen} 
+        onClose={toggleModal} 
+        pageTitle={pageTitle} 
+        companyName={companyName} 
+        userName={userName} 
+        userRole={userRole}
+      />
     </>
   );
 };
