@@ -3,8 +3,14 @@ import userIcon from '../assets/icons-menu/user.svg';
 import alert from '../assets/icons-menu/alert.svg'; 
 import NotificationModal from './NotificationModal';
 
-// Defina as propriedades esperadas para o Header
-const Header = ({ pageTitle, companyName, userName, userRole }) => {
+interface HeaderProps {
+  pageTitle: string;
+  companyName: string;
+  userName: string;
+  userRole: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ pageTitle, companyName, userName, userRole }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const toggleModal = () => {
@@ -40,11 +46,7 @@ const Header = ({ pageTitle, companyName, userName, userRole }) => {
 
       <NotificationModal 
         isOpen={isModalOpen} 
-        onClose={toggleModal} 
-        pageTitle={pageTitle} 
-        companyName={companyName} 
-        userName={userName} 
-        userRole={userRole}
+        onClose={toggleModal}
       />
     </>
   );
